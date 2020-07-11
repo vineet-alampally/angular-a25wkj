@@ -14,14 +14,14 @@ export function createApollo(httpLink: HttpLink) {
       Accept: 'charset=utf-8'
     }
   }));
-  const token = "d99ae439c36a91a146de077dcd6eb1769cfcdb85";
+  const token = "8c1b07c57bdc586e150500f62da5d45610a76a99 ";
   const auth = setContext((operation, context) => ({
     headers: {
       Authorization: `Bearer ${token}`
     },
   }));
   return {
-    link: ApolloLink.from([basic, httpLink.create({ uri })]),
+    link: ApolloLink.from([basic,auth, httpLink.create({ uri })]),
     cache: new InMemoryCache(),
   };
 }
