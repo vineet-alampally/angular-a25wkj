@@ -2,23 +2,28 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ApolloModule } from 'apollo-angular';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { HttpLinkModule } from 'apollo-angular-link-http';
+import { HttpClientModule } from '@angular/common/http';
+import { GraphQLModule } from './graphql.module';;
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-    ])
+      { path: ''},
+    ]),
+    ApolloModule,
+    HttpLinkModule,
+    HttpClientModule,
+    GraphQLModule,
   ],
   declarations: [
     AppComponent,
-    TopBarComponent,
-    ProductListComponent
+    TopBarComponent,    
   ],
   bootstrap: [ AppComponent ]
 })

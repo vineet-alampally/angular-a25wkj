@@ -1,9 +1,18 @@
-<app-top-bar></app-top-bar>
+<h2>Repositories</h2>
 
-<div class="container">
-  <router-outlet></router-outlet>
+<div *ngFor="let repo of repository"> 
+
+  <h3>
+    <a [title]="repo.node.name + ' details'">
+      {{ repo.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="repo.url">
+    URL: {{ repo.url }}
+  </p>
+  
 </div>
-
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
