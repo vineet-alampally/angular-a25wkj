@@ -8,14 +8,14 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { HttpLinkModule } from 'apollo-angular-link-http';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphQLModule } from './graphql.module';
-import { ProductListComponent } from './product-list/product-list.component';
+import { RepoListComponent } from './Repo-list/repo-list.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent},
+      { path: '', component: RepoListComponent},
     ]),
     ApolloModule,
     HttpLinkModule,
@@ -25,7 +25,7 @@ import { ProductListComponent } from './product-list/product-list.component';
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent,    
+    RepoListComponent,    
   ],
   bootstrap: [ AppComponent ]
 })

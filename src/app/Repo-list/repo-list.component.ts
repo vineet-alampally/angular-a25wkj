@@ -24,10 +24,10 @@ interface data{
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  templateUrl: './repo-list.component.html',
+  styleUrls: ['./repo-list.component.css']
 })
-export class ProductListComponent implements OnInit {  
+export class RepoListComponent implements OnInit {  
 
 title= 'GitHub Repositories';
 repos: data;
