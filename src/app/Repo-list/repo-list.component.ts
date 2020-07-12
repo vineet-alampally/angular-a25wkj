@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 
+
 interface edges{
     nodes: node;
     __typename: string 
@@ -11,6 +12,7 @@ interface edges{
 interface node{
   name: string;
   url: string;
+  description: string;
   __typename: string;
 }
 
@@ -45,15 +47,16 @@ ngOnInit(): void{
 }
 
 const GET_REPOS = gql`{
-  search(query: "is:public", type: REPOSITORY, first: 5) {    
+  search(query: "is:public", type: REPOSITORY, first: 15) {    
     edges {
       node {
         ... on Repository {
           name
+          description
           url          
         }
       }
-    }
+    }    
   }
 }
 `

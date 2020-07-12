@@ -1,22 +1,17 @@
-<h2>Repositories</h2>
+<h2></h2>
 
-
+<div>
 <ng-container *ngIf="this.repos">
-  <ul>
-    <li *ngFor="let repo of this.repos.search.edges">
-        {{repo.node.name}}        
-    </li>
-    
+  <ul class="list list-view-filter" *ngFor="let repo of this.repos.search.edges">
+    <li>
+        <div class="name">Repository Name: {{repo.node.name}}</div>
+        <div class="description">Description: {{repo.node.description}}</div> 
+        <div class="url">URL: <a href={{repo.node.url}}>{{repo.node.url}}</a></div> 
+    </li>   
 </ul>
 </ng-container>
- 
-
-
-  <!--<h3>
-      {{ product.name }}
-  </h3>
-
 </div>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

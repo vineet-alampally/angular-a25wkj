@@ -1,7 +1,37 @@
+.list.list-view-filter {
+  flex-direction: column;
+}
 
+.list.list-view-filter li {
+  padding: 10px;
+}
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  background-color: #1f364d;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+div.name{
+  color: white;
+  font-display: Geneva;
+  padding: 15px;
+}
+div.description{
+  color: rgb(207, 207, 71);
+  padding: 15px;
+}
+
+div.url{
+  color: white;
+  padding: 15px;
+}
