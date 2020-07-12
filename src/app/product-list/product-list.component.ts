@@ -1,19 +1,64 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { products } from '../products';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+
+interface edges{
+    nodes: node;
+}
+
+interface node{
+  name: string;
+  url: string;
+  __typename: string;
+}
+
+interface search{
+  repos: edges[];
+  __typename: string 
+}
+
+interface data{
+  search: search;
+}
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products = products;
+export class ProductListComponent implements OnInit {  
 
-  share() {
-    window.alert('The product has been shared!');
+title= 'GitHub Repositories';
+repos: data;
+
+constructor(private apollo: Apollo){}
+
+ngOnInit(): void{
+  this.apollo.query<data>({
+    query: GET_REPOS
+  })
+  .subscribe(result=>{ this.repos = result.data;
+  console.log(result.data );
+  console.log(this.repos );
+  });
+  
+}  
+}
+
+const GET_REPOS = gql`{
+  search(query: "is:public", type: REPOSITORY, first: 5) {    
+    edges {
+      node {
+        ... on Repository {
+          name
+          url          
+        }
+      }
+    }
   }
 }
+`
 
 
 /*

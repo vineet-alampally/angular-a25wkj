@@ -34,7 +34,7 @@ interface data{
 export class AppComponent implements OnInit  {
 
 title= 'GitHub Repositories';
-repos$: data;
+repos: data;
 repository: edges[];
 constructor(private apollo: Apollo){}
 
@@ -42,9 +42,9 @@ ngOnInit(): void{
   this.apollo.query<data>({
     query: GET_REPOS
   })
-  .subscribe(result=> this.repos$ = result.data);
+  .subscribe(result=> this.repos = result.data);
 
-  this.repository = this.repos$.search.repos;
+  //this.repository = this.repos.search.repos;
 }
 }
 

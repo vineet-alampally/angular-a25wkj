@@ -1,6 +1,25 @@
-<h2>Repositories</h2>
+<app-top-bar></app-top-bar>
 
-<div *ngFor="let repo of repository"> 
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
+
+<!--<h2>Repositories</h2>
+
+
+<ul *ngIf="repos">
+    <li *ngFor="let repo of re">
+        {{account.accountNumber}}
+    </li>
+</ul>
+
+<div *ngFor="let repo of repos.search.repos | async"> 
 
   <h3>
     <a [title]="repo.node.name + ' details'">
