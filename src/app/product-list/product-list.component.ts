@@ -29,7 +29,7 @@ interface data{
 })
 export class ProductListComponent implements OnInit {  
 
-title= 'GitHub Repositories'; 54
+title= 'GitHub Repositories';
 repos: data;
 
 constructor(private apollo: Apollo){}

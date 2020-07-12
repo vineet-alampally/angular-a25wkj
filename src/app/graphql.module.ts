@@ -14,7 +14,7 @@ export function createApollo(httpLink: HttpLink) {
       Accept: 'charset=utf-8'
     }
   }));
-  const token = "1e115c39f4324dd045247729cc342adda4240b4e";
+  const token = "";
   const auth = setContext((operation, context) => ({
     headers: {
       Authorization: `Bearer ${token}`
