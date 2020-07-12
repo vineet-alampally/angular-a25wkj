@@ -1,11 +1,12 @@
 <h2>Repositories</h2>
 
 
-<ng-container *ngIf="repos">
+<ng-container *ngIf="this.repos">
   <ul>
-    <li *ngFor="let repo of repos.search.repos">
-        {{repo.name}}
+    <li *ngFor="let repo of this.repos.search.edges">
+        {{repo.node.name}}        
     </li>
+    
 </ul>
 </ng-container>
  

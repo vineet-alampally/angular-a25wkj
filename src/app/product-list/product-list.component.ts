@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 
 interface edges{
     nodes: node;
+    __typename: string 
 }
 
 interface node{
@@ -14,8 +15,7 @@ interface node{
 }
 
 interface search{
-  repos: edges[];
-  __typename: string 
+  repos: edges[];  
 }
 
 interface data{
@@ -29,7 +29,7 @@ interface data{
 })
 export class ProductListComponent implements OnInit {  
 
-title= 'GitHub Repositories';
+title= 'GitHub Repositories'; 54
 repos: data;
 
 constructor(private apollo: Apollo){}
@@ -38,9 +38,7 @@ ngOnInit(): void{
   this.apollo.query<data>({
     query: GET_REPOS
   })
-  .subscribe(result=>{ this.repos = result.data;
-  console.log(result.data );
-  console.log(this.repos );
+  .subscribe(result=>{ this.repos = result.data;  
   });
   
 }  
