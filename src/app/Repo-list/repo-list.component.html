@@ -2,11 +2,12 @@
 
 <div>
 <ng-container *ngIf="this.repos">
+  <div >Total Repositories : {{this.repos.search.repositoryCount}}</div>
   <ul class="list list-view-filter" *ngFor="let repo of this.repos.search.edges">
     <li>
         <div class="name">Repository Name: {{repo.node.name}}</div>
         <div class="description">Description: {{repo.node.description}}</div> 
-        <div class="url">URL: <a href={{repo.node.url}}>{{repo.node.url}}</a></div> 
+        <div class="url">More: <a href={{repo.node.url}}>{{repo.node.url}}</a></div> 
     </li>   
 </ul>
 </ng-container>

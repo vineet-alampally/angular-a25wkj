@@ -18,10 +18,12 @@ interface node{
 
 interface search{
   repos: edges[];  
+  repositoryCount: string;  
 }
 
 interface data{
   search: search;
+  
 }
 
 @Component({
@@ -48,6 +50,7 @@ ngOnInit(): void{
 
 const GET_REPOS = gql`{
   search(query: "is:public", type: REPOSITORY, first: 15) {    
+    repositoryCount
     edges {
       node {
         ... on Repository {
